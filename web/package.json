@@ -1,0 +1,31 @@
+{
+  "name": "feedget",
+  "version": "1.0.0",
+  "private": true,
+  "authors": [
+    "RocketSeat",
+    "Julio L. Muller"
+  ],
+  "scripts": {
+    "dev": "vite serve --port 8081",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.8",
+    "@types/react-dom": "^18.0.3",
+    "@vitejs/plugin-react": "^1.3.2",
+    "eslint": "^8.14.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-import-helpers": "^1.2.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.7",
+    "vite-tsconfig-paths": "^3.4.1"
+  }
+}
