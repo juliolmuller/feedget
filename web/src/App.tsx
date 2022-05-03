@@ -1,23 +1,15 @@
-import { useState } from 'react';
+import { Popover } from '@headlessui/react';
 
 import { TriggerButton } from '~/components/TriggerButton';
 
 export function App() {
-  const [isWidgetOpen, setWidgetOpen] = useState(false);
-
-  function handleToggleWidget() {
-    setWidgetOpen(!isWidgetOpen);
-  }
-
   return (
-    <div className="absolute bottom-6 right-6">
-      {isWidgetOpen && (
-        <div className="mb-4 rounded bg-black p-3">
-          <span className="text-white">Hello, there!</span>
-        </div>
-      )}
+    <Popover className="absolute bottom-6 right-6">
+      <Popover.Panel className="mb-4 rounded bg-black p-3">
+        <span className="text-white">Hello, there!</span>
+      </Popover.Panel>
 
-      <TriggerButton onClick={handleToggleWidget} />
-    </div>
+      <TriggerButton />
+    </Popover>
   );
 }
