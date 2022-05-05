@@ -1,9 +1,9 @@
 import { Popover } from '@headlessui/react';
 import { useState } from 'react';
 
-import bugIcon from '~/asseets/bug.svg';
-import ideaIcon from '~/asseets/idea.svg';
-import otherIcon from '~/asseets/thought.svg';
+import bugIcon from '~/assets/bug.svg';
+import ideaIcon from '~/assets/idea.svg';
+import otherIcon from '~/assets/thought.svg';
 import {
   FeedbackOption,
   FeedbackSelector,
