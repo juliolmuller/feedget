@@ -43,7 +43,7 @@ export function App() {
   console.log(feedbackType);
 
   return (
-    <Popover className="absolute bottom-8 right-8 flex flex-col items-end">
+    <Popover className="absolute bottom-1/2 right-1/2 flex flex-col items-end">
       <Popover.Panel className="w-[calc(100vw-3rem)] md:w-[336px]">
         <div className="relative flex flex-col items-center w-full mb-4 rounded-2xl bg-zinc-900 p-4 shadow-lg">
           {feedbackType === null ? (

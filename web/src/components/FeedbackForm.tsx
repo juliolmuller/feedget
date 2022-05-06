@@ -1,13 +1,14 @@
-import { ArrowLeft, Camera } from 'phosphor-react';
+import { ArrowLeft } from 'phosphor-react';
 import { FormEvent, useState } from 'react';
 
+import { CaptureScreenButton } from '~/components/CaptureScreenButton';
 import { CloseButton } from '~/components/CloseButton';
 import { FeedbackOption } from '~/components/FeedbackSelector';
 
 export interface FeedbackFormProps {
   option: FeedbackOption;
   onReturn: () => void;
-  onSubmit: (message: string) => void;
+  onSubmit: (message: string, screenshot?: string) => void;
 }
 
 export function FeedbackForm({
@@ -16,10 +17,11 @@ export function FeedbackForm({
   onSubmit,
 }: FeedbackFormProps) {
   const [message, setMessage] = useState('');
+  const [screenshot, setScreenshot] = useState<string | null>(null);
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
-    message && onSubmit(message);
+    message && onSubmit(message, screenshot || undefined);
   }
 
   return (
@@ -54,12 +56,12 @@ export function FeedbackForm({
             value={message}
             onChange={(event) => setMessage(event.target.value)}
           />
-          <button
-            className="flex items-center justify-center outline-none rounded bg-zinc-800 transition-colo hover:bg-zinc-700 focus:ring-2 focus:ring-brand-500 focus:ring-offset-1 focus:ring-offset-zinc-900"
-            type="button"
-          >
-            <Camera className="h-6 w-6" />
-          </button>
+
+          <CaptureScreenButton
+            onCapture={setScreenshot}
+            onDiscard={() => setScreenshot(null)}
+          />
+
           <button
             className="flex justify-center items-center outline-none rounded bg-brand-500 transition-colors hover:bg-brand-300 focus:ring-2 disabled:opacity-50 focus:ring-brand-500 focus:ring-offset-1 focus:ring-offset-zinc-900"
             disabled={!message}
