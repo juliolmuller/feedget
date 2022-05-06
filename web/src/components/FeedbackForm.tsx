@@ -52,6 +52,7 @@ export function FeedbackForm({
         >
           <textarea
             className="col-span-2 resize-none outline-none border-1 border-zinc-600 rounded-md bg-transparent text-zinc-100 text-sm focus:ring-1 focus:ring-brand-500 focus:border-brand-500 placeholder:text-zinc-400 scrollbar-thin scrollbar-thumb-zinc-700 scrollbar-track-transparent"
+            autoFocus
             placeholder={option.desc}
             value={message}
             onChange={(event) => setMessage(event.target.value)}
