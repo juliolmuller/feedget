@@ -63,7 +63,7 @@ export function FeedbackForm({
           />
 
           <button
-            className="flex justify-center items-center outline-none rounded bg-brand-500 transition-colors hover:bg-brand-300 focus:ring-2 disabled:opacity-50 focus:ring-brand-500 focus:ring-offset-1 focus:ring-offset-zinc-900"
+            className="flex justify-center items-center outline-none rounded bg-brand-500 transition-colors hover:bg-brand-300 focus:ring-2 disabled:opacity-50 disabled:hover:bg-brand-500 focus:ring-brand-500 focus:ring-offset-1 focus:ring-offset-zinc-900"
             disabled={!message}
             type="submit"
           >
