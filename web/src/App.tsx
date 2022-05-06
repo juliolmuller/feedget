@@ -9,6 +9,7 @@ import {
   FeedbackOption,
   FeedbackSelector,
 } from '~/components/FeedbackSelector';
+import { FeedbackSubmitted } from '~/components/FeedbackSubmitted';
 import { TriggerButton } from '~/components/TriggerButton';
 
 const feedbackTypes: Record<string, FeedbackOption> = {
@@ -51,9 +52,9 @@ export function App() {
   console.log(feedbackType);
 
   return (
-    <Popover className="absolute bottom-1/2 right-1/2 flex flex-col items-end">
+    <Popover className="absolute bottom-8 right-8 flex flex-col items-end">
       <Popover.Panel className="w-[calc(100vw-3rem)] md:w-[336px]">
-        <div className="relative flex flex-col items-center w-full mb-4 rounded-2xl bg-zinc-900 p-4 shadow-lg">
+        <div className="relative flex flex-col items-center h-[264px] w-full mb-4 rounded-2xl bg-zinc-900 p-4 shadow-lg">
           {step === 1 && (
             <FeedbackSelector
               options={feedbackTypes}
@@ -67,7 +68,7 @@ export function App() {
               onSubmit={handleSubmit}
             />
           )}
-          {step === 3 && <div>Hello, there!</div>}
+          {step === 3 && <FeedbackSubmitted onReset={handleReset} />}
 
           <footer className="text-xs text-neutral-400">
             Feito com ♥ por{' '}
