@@ -30,14 +30,22 @@ const feedbackTypes: Record<string, FeedbackOption> = {
 };
 
 export function App() {
+  const [step, setStep] = useState<1 | 2 | 3>(1);
   const [feedbackType, setFeedbackType] = useState<string | null>(null);
 
-  function handleReturn() {
+  function handleSelectType(type: string) {
+    setFeedbackType(type);
+    setStep(2);
+  }
+
+  function handleReset() {
     setFeedbackType(null);
+    setStep(1);
   }
 
   function handleSubmit(message: string) {
     console.log('submitted:', message);
+    setStep(3);
   }
 
   console.log(feedbackType);
@@ -46,18 +54,20 @@ export function App() {
     <Popover className="absolute bottom-1/2 right-1/2 flex flex-col items-end">
       <Popover.Panel className="w-[calc(100vw-3rem)] md:w-[336px]">
         <div className="relative flex flex-col items-center w-full mb-4 rounded-2xl bg-zinc-900 p-4 shadow-lg">
-          {feedbackType === null ? (
+          {step === 1 && (
             <FeedbackSelector
               options={feedbackTypes}
-              onSelect={setFeedbackType}
+              onSelect={handleSelectType}
             />
-          ) : (
+          )}
+          {step === 2 && feedbackType && (
             <FeedbackForm
               option={feedbackTypes[feedbackType]}
-              onReturn={handleReturn}
+              onReturn={handleReset}
               onSubmit={handleSubmit}
             />
           )}
+          {step === 3 && <div>Hello, there!</div>}
 
           <footer className="text-xs text-neutral-400">
             Feito com ♥ por{' '}
