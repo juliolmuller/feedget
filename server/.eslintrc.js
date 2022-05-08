@@ -6,8 +6,8 @@ module.exports = {
   },
   extends: [],
   ignorePatterns: [],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    parser: '@typescript-eslint/parser',
     ecmaVersion: 2022,
     sourceType: 'module',
   },
