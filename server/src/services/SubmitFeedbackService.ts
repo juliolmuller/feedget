@@ -15,6 +15,22 @@ class SubmitFeedbackService {
 
   async execute(request: SubmitFeedbackServiceRequest) {
     const { type, comment, screenshot } = request;
+
+    if (!type) {
+      throw new Error('Type is required.');
+    }
+
+    if (!comment) {
+      throw new Error('Comment is required.');
+    }
+
+    if (
+      typeof screenshot === 'string' &&
+      !screenshot.startsWith('data:image/png;base64,')
+    ) {
+      throw new Error('Screenshot should be a base64 image URL.');
+    }
+
     const feedback = await this.feedbackRepository.create({
       type,
       comment,
