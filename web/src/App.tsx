@@ -12,6 +12,8 @@ import {
 import { FeedbackSubmitted } from '~/components/FeedbackSubmitted';
 import { TriggerButton } from '~/components/TriggerButton';
 
+import api from './services/api';
+
 const feedbackTypes: Record<string, FeedbackOption> = {
   bug: {
     title: 'Problema',
@@ -44,12 +46,12 @@ export function App() {
     setStep(1);
   }
 
-  function handleSubmit(message: string) {
-    console.log('submitted:', message);
+  async function handleSubmit(comment: string, screenshot?: string) {
+    if (!feedbackType) return;
+
+    await api.create({ type: feedbackType, comment, screenshot });
     setStep(3);
   }
-
-  console.log(feedbackType);
 
   return (
     <Popover className="absolute bottom-8 right-8 flex flex-col items-end">

@@ -1,4 +1,4 @@
-import { ArrowLeft } from 'phosphor-react';
+import { ArrowLeft, CircleNotch } from 'phosphor-react';
 import { FormEvent, useState } from 'react';
 
 import { CaptureScreenButton } from '~/components/CaptureScreenButton';
@@ -8,7 +8,7 @@ import { FeedbackOption } from '~/components/FeedbackSelector';
 export interface FeedbackFormProps {
   option: FeedbackOption;
   onReturn: () => void;
-  onSubmit: (message: string, screenshot?: string) => void;
+  onSubmit: (comment: string, screenshot?: string) => void;
 }
 
 export function FeedbackForm({
@@ -16,12 +16,21 @@ export function FeedbackForm({
   onReturn,
   onSubmit,
 }: FeedbackFormProps) {
-  const [message, setMessage] = useState('');
+  const [comment, setComment] = useState('');
   const [screenshot, setScreenshot] = useState<string | null>(null);
+  const [isSubmitting, setSubmitting] = useState(false);
 
-  function handleSubmit(event: FormEvent) {
+  async function handleSubmit(event: FormEvent) {
     event.preventDefault();
-    message && onSubmit(message, screenshot || undefined);
+
+    if (!comment) return;
+
+    try {
+      setSubmitting(true);
+      await onSubmit(comment, screenshot || undefined);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -53,9 +62,10 @@ export function FeedbackForm({
           <textarea
             className="col-span-2 resize-none outline-none border-1 border-zinc-600 rounded-md bg-transparent text-zinc-100 text-sm focus:ring-1 focus:ring-brand-500 focus:border-brand-500 placeholder:text-zinc-400 scrollbar-thin scrollbar-thumb-zinc-700 scrollbar-track-transparent"
             autoFocus
+            disabled={isSubmitting}
             placeholder={option.desc}
-            value={message}
-            onChange={(event) => setMessage(event.target.value)}
+            value={comment}
+            onChange={(event) => setComment(event.target.value)}
           />
 
           <CaptureScreenButton
@@ -65,10 +75,14 @@ export function FeedbackForm({
 
           <button
             className="flex justify-center items-center outline-none rounded bg-brand-500 transition-colors hover:bg-brand-300 focus:ring-2 disabled:opacity-50 disabled:hover:bg-brand-500 focus:ring-brand-500 focus:ring-offset-1 focus:ring-offset-zinc-900"
-            disabled={!message}
+            disabled={!comment || isSubmitting}
             type="submit"
           >
-            Enviar feedback
+            {isSubmitting ? (
+              <CircleNotch className="h-4 w-4 animate-spin" weight="bold" />
+            ) : (
+              'Enviar feedback'
+            )}
           </button>
         </form>
       </main>
