@@ -8,7 +8,12 @@
   ],
   "scripts": {
     "dev": "tsnd src/index.ts",
-    "test": "jest"
+    "db": "docker-compose up",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "lint": "tsc --noEmit && eslint src/* --fix",
+    "build": "tsc",
+    "start": "node dist/"
   },
   "dependencies": {
     "@prisma/client": "^3.13.0",

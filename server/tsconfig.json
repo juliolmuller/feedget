@@ -8,5 +8,8 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2020"
-  }
+  },
+  "include": [
+    "src/"
+  ],
 }
