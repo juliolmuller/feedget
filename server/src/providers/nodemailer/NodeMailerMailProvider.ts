@@ -7,11 +7,11 @@ class NodeMailerMailProvider implements IMailProvider {
 
   constructor() {
     this.transporter = nodemailer.createTransport({
-      host: process.env.MAILTRAP_HOST,
-      port: Number(process.env.MAILTRAP_PORT),
+      host: process.env.EMAIL_HOST,
+      port: Number(process.env.EMAIL_PORT),
       auth: {
-        user: process.env.MAILTRAP_USER,
-        pass: process.env.MAILTRAP_PASS,
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
   }
