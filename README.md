@@ -1,5 +1,5 @@
 <h1 title="Move.It" align="center">
-  <img src=".github/icon.png" width="24px" alt="Logo icon for Feedget" />
+  <img src="https://user-images.githubusercontent.com/44725817/212798957-efac4cb1-c290-451b-bf8e-1c633b44f4b5.png" width="24px" alt="Logo icon for Feedget" />
   FEEDGET - The Widget to Get Feedback
 </h1>
 
@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <img src=".github/app-overview.gif" alt="Application Overview" width="400">
+  <img src="https://user-images.githubusercontent.com/44725817/212799323-b9c7c6d4-c60a-436f-8d64-ebeea38ca821.gif" alt="Application Overview" width="400">
 </p>
 
 Application developed during eighth edition of [Next Level Week](https://nextlevelweek.com/), delivered by [RocketSeat](https://rocketseat.com.br/). The objective here was to build a full JS stack widget to collect bug reports and feedbacks, so it can be embedded in any web or mobile application. Although the _React Native_ version was skipped, I was able to build (and have fun) the version for browsers and the backend for it. Amazing technologies learned!
