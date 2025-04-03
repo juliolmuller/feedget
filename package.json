@@ -1,6 +1,6 @@
 {
   "name": "feedget",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": true,
   "license": "MIT",
   "authors": [
@@ -8,6 +8,20 @@
     "Julio L. Muller"
   ],
   "homepage": "https://jlm-feedget.vercel.app/",
+  "workspaces": [
+    "server/",
+    "web/"
+  ],
   "type": "module",
-  "scripts": {}
+  "scripts": {
+    "lint": "bun run lint:server && bun run lint:web",
+    "lint:server": "cd server && bun run lint",
+    "lint:web": "cd web && bun run lint"
+  },
+  "devDependencies": {
+    "eslint": "^9.23.0",
+    "eslint-config-any": "^1.0.1",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  }
 }
