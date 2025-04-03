@@ -1,0 +1,13 @@
+{
+  "name": "feedget",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "authors": [
+    "RocketSeat",
+    "Julio L. Muller"
+  ],
+  "homepage": "https://jlm-feedget.vercel.app/",
+  "type": "module",
+  "scripts": {}
+}
