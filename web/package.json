@@ -11,7 +11,7 @@
     "dev": "vite serve --port 8081",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "tsc --noEmit && eslint --fix src/ eslint.config.js postcss.config.js tailwind.config.js"
+    "lint": "tsc --noEmit && eslint --fix src/ eslint.config.js postcss.config.js tailwind.config.js vite.config.ts"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.0",

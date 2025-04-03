@@ -1,3 +1,3 @@
 import anyConfig from 'eslint-config-any';
 
-export default [...anyConfig.react];
+export default [...anyConfig.node];
