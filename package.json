@@ -21,7 +21,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "prepare": "husky",
+    "prepare": "husky || true",
     "commit": "git-cz",
     "lint": "concurrently 'bun run lint:server' 'bun run lint:web'",
     "lint:server": "cd server && bun run lint",
