@@ -52,7 +52,7 @@ export function FeedbackForm({ option, onReturn, onSubmit }: FeedbackFormProps) 
           onSubmit={handleSubmit}
         >
           <textarea
-            className="col-span-2 resize-none outline-none border-1 border-zinc-600 rounded-md bg-transparent text-zinc-100 text-sm focus:ring-1 focus:ring-brand-500 focus:border-brand-500 placeholder:text-zinc-400 scrollbar-thin scrollbar-thumb-zinc-700 scrollbar-track-transparent"
+            className="col-span-2 resize-none outline-hidden border-1 border-zinc-600 rounded-md bg-transparent text-zinc-100 text-sm focus:ring-1 focus:ring-brand-500 focus:border-brand-500 placeholder:text-zinc-400 scrollbar-thin scrollbar-thumb-zinc-700 scrollbar-track-transparent"
             autoFocus
             disabled={isSubmitting}
             placeholder={option.desc}
@@ -63,7 +63,7 @@ export function FeedbackForm({ option, onReturn, onSubmit }: FeedbackFormProps) 
           <CaptureScreenButton onCapture={setScreenshot} onDiscard={() => setScreenshot(null)} />
 
           <button
-            className="flex justify-center items-center outline-none rounded bg-brand-500 transition-colors hover:bg-brand-300 focus:ring-2 disabled:opacity-50 disabled:hover:bg-brand-500 focus:ring-brand-500 focus:ring-offset-1 focus:ring-offset-zinc-900"
+            className="flex justify-center items-center outline-hidden rounded-sm bg-brand-500 transition-colors hover:bg-brand-300 focus:ring-2 disabled:opacity-50 disabled:hover:bg-brand-500 focus:ring-brand-500 focus:ring-offset-1 focus:ring-offset-zinc-900"
             disabled={!comment || isSubmitting}
             type="submit"
           >

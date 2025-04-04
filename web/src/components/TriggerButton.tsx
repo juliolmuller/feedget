@@ -1,9 +1,9 @@
-import { Popover } from '@headlessui/react';
+import { PopoverButton } from '@headlessui/react';
 import { ChatTeardropDots } from 'phosphor-react';
 
 export function TriggerButton() {
   return (
-    <Popover.Button
+    <PopoverButton
       className="group flex justify-center items-center h-12 bg-brand-500 rounded-full p-3"
       type="button"
     >
@@ -11,6 +11,6 @@ export function TriggerButton() {
       <span className="overflow-hidden max-w-0 pl-0 text-white group-hover:max-w-xl transition-all duration-700 ease-linear">
         Feedback
       </span>
-    </Popover.Button>
+    </PopoverButton>
   );
 }

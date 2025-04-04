@@ -30,7 +30,7 @@ export function CaptureScreenButton({ onCapture, onDiscard }: CaptureScreenButto
   if (screenshot) {
     return (
       <button
-        className="flex items-end justify-end outline-none rounded p-1 text-zinc-400 transition-colo hover:text-zinc-100 focus:ring-2 focus:ring-brand-500 focus:ring-offset-1 focus:ring-offset-zinc-900"
+        className="flex items-end justify-end outline-hidden rounded-sm p-1 text-zinc-400 transition-colo hover:text-zinc-100 focus:ring-2 focus:ring-brand-500 focus:ring-offset-1 focus:ring-offset-zinc-900"
         style={{
           backgroundImage: `url(${screenshot})`,
           backgroundPosition: 'top center',
@@ -47,7 +47,7 @@ export function CaptureScreenButton({ onCapture, onDiscard }: CaptureScreenButto
 
   return (
     <button
-      className="flex items-center justify-center outline-none rounded bg-zinc-800 transition-colo hover:bg-zinc-700 disabled:opacity-50 focus:ring-2 focus:ring-brand-500 focus:ring-offset-1 focus:ring-offset-zinc-900"
+      className="flex items-center justify-center outline-hidden rounded-sm bg-zinc-800 transition-colo hover:bg-zinc-700 disabled:opacity-50 focus:ring-2 focus:ring-brand-500 focus:ring-offset-1 focus:ring-offset-zinc-900"
       disabled={isCapturingScreen}
       title="Capturar tela atual"
       type="button"

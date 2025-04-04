@@ -1,4 +1,4 @@
-import { Popover } from '@headlessui/react';
+import { Popover, PopoverPanel } from '@headlessui/react';
 import { useState } from 'react';
 
 import bugIcon from '~/assets/bug.svg';
@@ -52,7 +52,7 @@ export function App() {
 
   return (
     <Popover className="absolute bottom-8 right-8 flex flex-col items-end">
-      <Popover.Panel className="w-[calc(100vw-3rem)] md:w-[336px]">
+      <PopoverPanel className="w-[calc(100vw-3rem)] md:w-[336px]">
         <div className="relative flex flex-col items-center h-[264px] w-full mb-4 rounded-2xl bg-zinc-900 p-4 shadow-lg">
           {step === 1 && <FeedbackSelector options={feedbackTypes} onSelect={handleSelectType} />}
           {step === 2 && feedbackType && (
@@ -76,7 +76,7 @@ export function App() {
             </a>
           </footer>
         </div>
-      </Popover.Panel>
+      </PopoverPanel>
 
       <TriggerButton />
     </Popover>
