@@ -1,4 +1,4 @@
-import reactPlugin from '@vitejs/plugin-react-swc';
+import reactPlugin from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import tsconfigPathsPlugin from 'vite-tsconfig-paths';
 
