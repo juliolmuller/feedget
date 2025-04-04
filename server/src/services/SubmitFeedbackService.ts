@@ -1,10 +1,10 @@
-import IMailProvider from '../providers/IMailProvider';
-import IFeedbackRepository from '../repositories/IFeedbackRepository';
+import type IMailProvider from '../providers/IMailProvider';
+import type IFeedbackRepository from '../repositories/IFeedbackRepository';
 
 export interface SubmitFeedbackServiceRequest {
-  type: string;
   comment: string;
   screenshot?: string;
+  type: string;
 }
 
 class SubmitFeedbackService {
@@ -13,7 +13,7 @@ class SubmitFeedbackService {
     private readonly mailProvider: IMailProvider,
   ) {}
 
-  async execute(request: SubmitFeedbackServiceRequest) {
+  async execute(request: SubmitFeedbackServiceRequest): Promise<void> {
     const { type, comment, screenshot } = request;
 
     if (!type) {
@@ -24,10 +24,7 @@ class SubmitFeedbackService {
       throw new Error('Comment is required.');
     }
 
-    if (
-      typeof screenshot === 'string' &&
-      !screenshot.startsWith('data:image/png;base64,')
-    ) {
+    if (typeof screenshot === 'string' && !screenshot.startsWith('data:image/png;base64,')) {
       throw new Error('Screenshot should be a base64 image URL.');
     }
 

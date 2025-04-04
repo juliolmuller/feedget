@@ -1,6 +1,6 @@
 export interface SendMailData {
-  subject: string;
   body: string;
+  subject: string;
 }
 
 interface IMailProvider {

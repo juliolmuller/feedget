@@ -1,20 +1,23 @@
 import { CloseButton } from '~/components/CloseButton';
 
 export interface FeedbackOption {
-  title: string;
   desc: string;
   icon: string;
   onClick?: () => void;
+  title: string;
 }
 
 export interface FeedbackSelectorProps {
-  options: { [type: string]: FeedbackOption };
   onSelect?: (type: string) => void;
+  options: Record<string, FeedbackOption>;
 }
 
 export function FeedbackSelector({ options, onSelect }: FeedbackSelectorProps) {
   function handleClick(type: string) {
-    type in options && options[type].onClick?.();
+    if (type in options) {
+      options[type].onClick?.();
+    }
+
     onSelect?.(type);
   }
 
@@ -30,7 +33,7 @@ export function FeedbackSelector({ options, onSelect }: FeedbackSelectorProps) {
         {Object.entries(options).map(([type, { desc, icon, title }]) => (
           <button
             key={type}
-            className="flex flex-col items-center justify-center gap-2 border-2 border-transparent focus:border-brand-500 focus:outline-none hover:border-brand-500 rounded-lg bg-zinc-800"
+            className="flex flex-col items-center justify-center gap-2 border-2 border-transparent focus:border-brand-500 focus:outline-hidden hover:border-brand-500 rounded-lg bg-zinc-800"
             title={desc}
             type="button"
             onClick={() => handleClick(type)}

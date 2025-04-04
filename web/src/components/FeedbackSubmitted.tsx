@@ -15,7 +15,7 @@ export function FeedbackSubmitted({ onReset }: FeedbackSubmittedProps) {
       <p className="text-xl mt-2">Agradecemos o feedback!</p>
 
       <button
-        className="outline-none rounded mt-6 bg-zinc-800 px-6 py-2 text-sm leading-6 hover:bg-zinc-700 transition-colors focus:ring-2  focus:ring-brand-500 focus:ring-offset-1 focus:ring-offset-zinc-900"
+        className="outline-hidden rounded-sm mt-6 bg-zinc-800 px-6 py-2 text-sm leading-6 hover:bg-zinc-700 transition-colors focus:ring-2  focus:ring-brand-500 focus:ring-offset-1 focus:ring-offset-zinc-900"
         type="button"
         onClick={() => onReset()}
       >

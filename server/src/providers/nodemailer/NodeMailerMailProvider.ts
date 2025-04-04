@@ -1,6 +1,7 @@
-import nodemailer, { Transporter } from 'nodemailer';
+import nodemailer, { type Transporter } from 'nodemailer';
 
-import IMailProvider, { SendMailData } from '../IMailProvider';
+import { type SendMailData } from '../IMailProvider';
+import type IMailProvider from '../IMailProvider';
 
 class NodeMailerMailProvider implements IMailProvider {
   private readonly transporter: Transporter;
@@ -16,7 +17,7 @@ class NodeMailerMailProvider implements IMailProvider {
     });
   }
 
-  async send(data: SendMailData) {
+  async send(data: SendMailData): Promise<void> {
     const { subject, body } = data;
 
     await this.transporter.sendMail({

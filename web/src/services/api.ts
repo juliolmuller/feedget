@@ -1,7 +1,7 @@
 export interface CreateFeedbackData {
-  type: string;
   comment: string;
   screenshot?: string;
+  type: string;
 }
 
 async function create(data: CreateFeedbackData) {

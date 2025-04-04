@@ -1,14 +1,14 @@
 export interface FeedbackEntity {
-  id: string;
-  type: string;
   comment: string;
-  screenshot: string | null;
+  id: string;
+  screenshot: null | string;
+  type: string;
 }
 
 export interface ICreateRepositoryData {
-  type: string;
   comment: string;
   screenshot?: string;
+  type: string;
 }
 
 interface IFeedbackRepository {

@@ -1,0 +1,35 @@
+{
+  "name": "feedget",
+  "version": "1.0.2",
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "commitizen": "^4.3.1",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.23.0",
+    "eslint-config-any": "^1.0.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "authors": [
+    "RocketSeat",
+    "Julio L. Muller"
+  ],
+  "homepage": "https://jlm-feedget.vercel.app/",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prepare": "husky",
+    "commit": "git-cz",
+    "lint": "concurrently 'bun run lint:server' 'bun run lint:web'",
+    "lint:server": "cd server && bun run lint",
+    "lint:web": "cd web && bun run lint"
+  },
+  "type": "module",
+  "workspaces": [
+    "server/",
+    "web/"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "web/**/*.{js,cjs,mjs,jsx,mjsx,ts,mts,tsx,mtsx}": [
+    "eslint --config web/eslint.config.js --fix"
+  ],
+  "server/**/*.{js,cjs,mjs,ts,mts}": [
+    "eslint --config server/eslint.config.mjs --fix"
+  ],
+  "*.json": [
+    "eslint --config server/eslint.config.mjs --fix"
+  ],
+  "*.{css,sass,scss}": [
+    "prettier --write"
+  ]
+}
