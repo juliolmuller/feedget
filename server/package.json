@@ -8,8 +8,10 @@
     "Julio L. Muller"
   ],
   "scripts": {
+    "prepare": "prisma generate",
     "dev": "tsnd src/index.ts",
     "db": "docker-compose up",
+    "migrate": "prisma migrate dev",
     "test": "bun test --coverage --coverage-reporter=lcov --coverage-dir=__coverage__",
     "test:watch": "bun run test --watch",
     "lint": "tsc --noEmit && eslint --fix src/ eslint.config.mjs",
@@ -17,7 +19,7 @@
     "start": "node dist/"
   },
   "dependencies": {
-    "@prisma/client": "^3.15.2",
+    "@prisma/client": "^6.5.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "nodemailer": "^6.10.0"
@@ -31,7 +33,7 @@
     "eslint": "^9.23.0",
     "eslint-config-any": "^1.0.3",
     "prettier": "^3.5.3",
-    "prisma": "^3.15.2",
+    "prisma": "^6.5.0",
     "ts-node-dev": "^1.1.8",
     "typescript": "^5.8.2"
   }
