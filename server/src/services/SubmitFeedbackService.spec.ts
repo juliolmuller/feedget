@@ -2,7 +2,7 @@ import SubmitFeedbackService from './SubmitFeedbackService';
 
 describe('Feedback submission', () => {
   it('should create a feedback without a screenshot', async () => {
-    const feedbackRepositoryCreateSpy = jest.fn(() => ({} as any));
+    const feedbackRepositoryCreateSpy = jest.fn(() => ({}) as any);
     const mailAdapterSendSpy = jest.fn();
 
     const submitFeedbackService = new SubmitFeedbackService(
@@ -23,8 +23,7 @@ describe('Feedback submission', () => {
 
   it('should create a feedback with a screenshot', async () => {
     const feedbackRepositoryCreateSpy = jest.fn(
-      () =>
-        ({ screenshot: 'data:image/png;base64,jsano74ahqlu4fnbqo4' } as any),
+      () => ({ screenshot: 'data:image/png;base64,jsano74ahqlu4fnbqo4' }) as any,
     );
     const mailAdapterSendSpy = jest.fn();
 
@@ -46,7 +45,7 @@ describe('Feedback submission', () => {
 
   it('should not create a feedback without a type', async () => {
     const submitFeedbackService = new SubmitFeedbackService(
-      { create: async () => ({} as any) },
+      { create: async () => ({}) as any },
       { send: async () => {} },
     );
 
@@ -61,7 +60,7 @@ describe('Feedback submission', () => {
 
   it('should not create a feedback without a comment', async () => {
     const submitFeedbackService = new SubmitFeedbackService(
-      { create: async () => ({} as any) },
+      { create: async () => ({}) as any },
       { send: async () => {} },
     );
 
@@ -76,7 +75,7 @@ describe('Feedback submission', () => {
 
   it('should not create a feedback with an invalid screenshot', async () => {
     const submitFeedbackService = new SubmitFeedbackService(
-      { create: async () => ({} as any) },
+      { create: async () => ({}) as any },
       { send: async () => {} },
     );
 

@@ -5,10 +5,7 @@ import bugIcon from '~/assets/bug.svg';
 import ideaIcon from '~/assets/idea.svg';
 import otherIcon from '~/assets/thought.svg';
 import { FeedbackForm } from '~/components/FeedbackForm';
-import {
-  FeedbackOption,
-  FeedbackSelector,
-} from '~/components/FeedbackSelector';
+import { type FeedbackOption, FeedbackSelector } from '~/components/FeedbackSelector';
 import { FeedbackSubmitted } from '~/components/FeedbackSubmitted';
 import { TriggerButton } from '~/components/TriggerButton';
 
@@ -34,7 +31,7 @@ const feedbackTypes: Record<string, FeedbackOption> = {
 
 export function App() {
   const [step, setStep] = useState<1 | 2 | 3>(1);
-  const [feedbackType, setFeedbackType] = useState<string | null>(null);
+  const [feedbackType, setFeedbackType] = useState<null | string>(null);
 
   function handleSelectType(type: string) {
     setFeedbackType(type);
@@ -57,12 +54,7 @@ export function App() {
     <Popover className="absolute bottom-8 right-8 flex flex-col items-end">
       <Popover.Panel className="w-[calc(100vw-3rem)] md:w-[336px]">
         <div className="relative flex flex-col items-center h-[264px] w-full mb-4 rounded-2xl bg-zinc-900 p-4 shadow-lg">
-          {step === 1 && (
-            <FeedbackSelector
-              options={feedbackTypes}
-              onSelect={handleSelectType}
-            />
-          )}
+          {step === 1 && <FeedbackSelector options={feedbackTypes} onSelect={handleSelectType} />}
           {step === 2 && feedbackType && (
             <FeedbackForm
               option={feedbackTypes[feedbackType]}

@@ -1,20 +1,23 @@
 import { CloseButton } from '~/components/CloseButton';
 
 export interface FeedbackOption {
-  title: string;
   desc: string;
   icon: string;
   onClick?: () => void;
+  title: string;
 }
 
 export interface FeedbackSelectorProps {
-  options: { [type: string]: FeedbackOption };
   onSelect?: (type: string) => void;
+  options: Record<string, FeedbackOption>;
 }
 
 export function FeedbackSelector({ options, onSelect }: FeedbackSelectorProps) {
   function handleClick(type: string) {
-    type in options && options[type].onClick?.();
+    if (type in options) {
+      options[type].onClick?.();
+    }
+
     onSelect?.(type);
   }
 

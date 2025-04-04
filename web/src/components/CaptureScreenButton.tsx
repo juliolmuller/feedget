@@ -7,12 +7,9 @@ export interface CaptureScreenButtonProps {
   onDiscard: () => void;
 }
 
-export function CaptureScreenButton({
-  onCapture,
-  onDiscard,
-}: CaptureScreenButtonProps) {
+export function CaptureScreenButton({ onCapture, onDiscard }: CaptureScreenButtonProps) {
   const [isCapturingScreen, setCapturingScreen] = useState(false);
-  const [screenshot, setScreenshot] = useState<string | null>(null);
+  const [screenshot, setScreenshot] = useState<null | string>(null);
 
   async function handleCaptureScreen() {
     setCapturingScreen(true);

@@ -1,18 +1,25 @@
 {
   "name": "feedget",
   "version": "1.0.2",
-  "private": true,
-  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "commitizen": "^4.3.1",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.23.0",
+    "eslint-config-any": "^1.0.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
   "authors": [
     "RocketSeat",
     "Julio L. Muller"
   ],
   "homepage": "https://jlm-feedget.vercel.app/",
-  "workspaces": [
-    "server/",
-    "web/"
-  ],
-  "type": "module",
+  "license": "MIT",
+  "private": true,
   "scripts": {
     "prepare": "husky",
     "commit": "git-cz",
@@ -20,16 +27,9 @@
     "lint:server": "cd server && bun run lint",
     "lint:web": "cd web && bun run lint"
   },
-  "devDependencies": {
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
-    "commitizen": "^4.3.1",
-    "concurrently": "^9.1.2",
-    "eslint": "^9.23.0",
-    "eslint-config-any": "^1.0.1",
-    "husky": "^9.1.7",
-    "lint-staged": "^15.5.0",
-    "prettier": "^3.5.3",
-    "typescript": "^5.8.2"
-  }
+  "type": "module",
+  "workspaces": [
+    "server/",
+    "web/"
+  ]
 }

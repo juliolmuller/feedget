@@ -1,23 +1,19 @@
 import { ArrowLeft, CircleNotch } from 'phosphor-react';
-import { FormEvent, useState } from 'react';
+import { type FormEvent, useState } from 'react';
 
 import { CaptureScreenButton } from '~/components/CaptureScreenButton';
 import { CloseButton } from '~/components/CloseButton';
-import { FeedbackOption } from '~/components/FeedbackSelector';
+import { type FeedbackOption } from '~/components/FeedbackSelector';
 
 export interface FeedbackFormProps {
-  option: FeedbackOption;
   onReturn: () => void;
   onSubmit: (comment: string, screenshot?: string) => void;
+  option: FeedbackOption;
 }
 
-export function FeedbackForm({
-  option,
-  onReturn,
-  onSubmit,
-}: FeedbackFormProps) {
+export function FeedbackForm({ option, onReturn, onSubmit }: FeedbackFormProps) {
   const [comment, setComment] = useState('');
-  const [screenshot, setScreenshot] = useState<string | null>(null);
+  const [screenshot, setScreenshot] = useState<null | string>(null);
   const [isSubmitting, setSubmitting] = useState(false);
 
   async function handleSubmit(event: FormEvent) {
@@ -36,11 +32,7 @@ export function FeedbackForm({
   return (
     <>
       <header className="flex gap-2">
-        <img
-          className="h-6 w-6"
-          src={option.icon}
-          alt={`ícone de ${option.title}`}
-        />
+        <img className="h-6 w-6" src={option.icon} alt={`ícone de ${option.title}`} />
         <h2 className="text-2xl leading-6">{option.title}</h2>
 
         <CloseButton />
@@ -68,10 +60,7 @@ export function FeedbackForm({
             onChange={(event) => setComment(event.target.value)}
           />
 
-          <CaptureScreenButton
-            onCapture={setScreenshot}
-            onDiscard={() => setScreenshot(null)}
-          />
+          <CaptureScreenButton onCapture={setScreenshot} onDiscard={() => setScreenshot(null)} />
 
           <button
             className="flex justify-center items-center outline-none rounded bg-brand-500 transition-colors hover:bg-brand-300 focus:ring-2 disabled:opacity-50 disabled:hover:bg-brand-500 focus:ring-brand-500 focus:ring-offset-1 focus:ring-offset-zinc-900"
