@@ -2,7 +2,6 @@ import anyConfig from 'eslint-config-any';
 
 export default [
   ...anyConfig.node,
-  ...anyConfig.jest,
   {
     files: ['**/*.{test,spec}.*'],
     rules: {
