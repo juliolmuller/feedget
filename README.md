@@ -47,7 +47,7 @@ Application developed during eighth edition of [Next Level Week](https://nextlev
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Phosphor Icons](https://phosphoricons.com/)
 - [Headless UI](https://headlessui.dev/)
-- [html2canvas converter](https://html2canvas.hertzen.com/)
+- [HTML-to-Canvas converter](https://yorickshan.github.io/html2canvas-pro/)
 
 **Backend:**
 - [Node.js](https://nodejs.org/en/)
