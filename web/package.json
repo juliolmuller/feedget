@@ -9,6 +9,7 @@
   ],
   "type": "module",
   "scripts": {
+    "commit": "commit",
     "dev": "vite serve --port 8081",
     "build": "vite build",
     "preview": "vite preview",

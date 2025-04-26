@@ -8,6 +8,7 @@
     "Julio L. Muller"
   ],
   "scripts": {
+    "commit": "commit",
     "prepare": "prisma generate",
     "build": "tsc",
     "start": "node dist/",

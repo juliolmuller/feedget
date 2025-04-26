@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "prepare": "husky || true",
-    "commit": "git-cz",
+    "commit": "commit",
     "lint": "bun run --filter '*' lint",
     "lint:server": "bun run --filter './server' lint",
     "lint:web": "bun run --filter './web' lint"
@@ -16,7 +16,8 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
-    "commitizen": "^4.3.1",
+    "@commitlint/config-workspace-scopes": "^19.8.0",
+    "@commitlint/prompt-cli": "^19.8.0",
     "eslint": "^9.25.1",
     "eslint-config-any": "^1.1.0",
     "husky": "^9.1.7",
