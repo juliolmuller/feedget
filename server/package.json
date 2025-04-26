@@ -1,5 +1,5 @@
 {
-  "name": "@feedget/server",
+  "name": "server",
   "version": "1.0.2",
   "private": true,
   "license": "MIT",
