@@ -1,6 +1,6 @@
 {
   "branches": [
-    "main"
+    "fff"
   ],
   "extends": "semantic-release-monorepo",
   "plugins": [
