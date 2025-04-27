@@ -1,0 +1,7 @@
+*                text eol=lf
+*.sqlite         binary
+*.sqlite-journal binary
+*.jpg            binary
+*.jpeg           binary
+*.png            binary
+*.ico            binary

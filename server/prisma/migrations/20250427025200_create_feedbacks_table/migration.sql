@@ -1,9 +1,7 @@
 -- CreateTable
 CREATE TABLE "feedbacks" (
-    "id" TEXT NOT NULL,
+    "id" TEXT NOT NULL PRIMARY KEY,
     "type" TEXT NOT NULL,
     "comment" TEXT NOT NULL,
-    "screenshot" TEXT,
-
-    CONSTRAINT "feedbacks_pkey" PRIMARY KEY ("id")
+    "screenshot" TEXT
 );

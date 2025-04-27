@@ -1,35 +1,36 @@
 {
-  "name": "feedget",
-  "version": "1.0.3",
-  "devDependencies": {
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
-    "commitizen": "^4.3.1",
-    "concurrently": "^9.1.2",
-    "eslint": "^9.23.0",
-    "eslint-config-any": "^1.0.3",
-    "husky": "^9.1.7",
-    "lint-staged": "^15.5.0",
-    "prettier": "^3.5.3",
-    "typescript": "^5.8.2"
-  },
-  "authors": [
-    "RocketSeat",
-    "Julio L. Muller"
-  ],
-  "homepage": "https://jlm-feedget.vercel.app/",
-  "license": "MIT",
+  "name": "@feedget/monorepo",
   "private": true,
-  "scripts": {
-    "prepare": "husky || true",
-    "commit": "git-cz",
-    "lint": "concurrently 'bun run lint:server' 'bun run lint:web'",
-    "lint:server": "cd server && bun run lint",
-    "lint:web": "cd web && bun run lint"
-  },
-  "type": "module",
+  "homepage": "https://jlm-feedget.vercel.app/",
   "workspaces": [
     "server/",
     "web/"
-  ]
+  ],
+  "scripts": {
+    "prepare": "husky || true",
+    "commit": "commit",
+    "release": "semantic-release",
+    "lint": "bun run --filter '*' lint",
+    "lint:server": "bun run --filter './server' lint",
+    "lint:web": "bun run --filter './web' lint"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@commitlint/config-workspace-scopes": "^19.8.0",
+    "@commitlint/prompt-cli": "^19.8.0",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.2",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.3",
+    "eslint": "^9.25.1",
+    "eslint-config-any": "^1.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
+    "prettier": "^3.5.3",
+    "semantic-release": "^24.2.3",
+    "semantic-release-monorepo": "^8.0.2",
+    "typescript": "^5.8.3"
+  }
 }

@@ -42,6 +42,7 @@ Application developed during eighth edition of [Next Level Week](https://nextlev
 ## :rocket: Technologies & Resources
 
 **Frontend:**
+- [Bun](https://bun.sh/) as package manager and development runtime
 - [Vite.js](https://vitejs.dev/)
 - [React.js](https://reactjs.org)
 - [Tailwind CSS](https://tailwindcss.com/)
@@ -50,48 +51,44 @@ Application developed during eighth edition of [Next Level Week](https://nextlev
 - [HTML-to-Canvas converter](https://yorickshan.github.io/html2canvas-pro/)
 
 **Backend:**
-- [Node.js](https://nodejs.org/en/)
+- [Bun](https://bun.sh/) as package manager, test runner and development runtime (using [Node.js](https://nodejs.org/en/) for production)
 - [Express.js](https://expressjs.com/)
 - [Prisma](https://www.prisma.io/)
 - [Insomnia](https://insomnia.rest/)
 - [MailTrap service](https://mailtrap.io/)
 - SOLID principles
-- [Jest](https://jestjs.io/)
-- Docker for PostgreSQL database
+- SQLIte database
 
 **Development:**
 - [Visual Studio Code](https://code.visualstudio.com/)
-- Node.js routines with [Yarn v1](https://yarnpkg.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [ESlint](https://eslint.org/) and [Prettier](https://prettier.io/)
 
 ## :hammer: Setting up the Environment
 
-To set up the projects in your environment, make sure to have **Node.js 16+** and **Yarn** (**NPM** will do the job as well) installed in your machine and its `node` and `yarn`/`npm` shortcuts available through the command line.
+To set up the projects in your environment, make sure to have **Node.js 22+** and **Bun 1.2+** installed in your machine and the `bun` shortcuts available through the command line.
 
 Besides, you will need to create a `.env` file in both folders `/server` and `/web`. These file hold some configuration and secrets to make the application runnable. You can use the `.env.example` file as template to know which variables should be configured.
 
-With all that set, run the following commands to install dependencies and configure your database execute `npm start` to run **JSON Server** and then all the other routines can be run:
+With all these set, run the following commands to install dependencies and configure your database:
 
 ```bash
 # Backend project
 $ cd server/
-$ yarn install            # install node dependencies
-$ yarn db                 # start a Docker container running PostgreSQL
-$ yarn prisma migrate dev # create the schemas in database
-$ yarn dev                # start the server in development mode
+$ bun install       # install project dependencies
+$ bun run prepare   # update Prisma's interfaces with DB schema
+$ bun run migrate   # ensure your DB schemas is up-to-date
+$ bun run dev       # start the server in development mode
 
 # Frontend project
-$ cd web
-$ yarn install            # install node dependencies
-$ yarn dev                # start the server in development mode
+$ cd web/
+$ bun install       # install project dependencies
+$ bun run dev       # start the server in development mode
 ```
-
-If not using **Yarn**, just replace `yarn` by the respective command for `npm`.
 
 ## :zap: Features Implementations
 
-The main idea of the project was developed during the week of the event and the result is the one found in [release v1.0](https://github.com/juliolmuller/feedget/releases/tag/v1.0). Afterwards, any incoming commits are intended to be incremental updates to improve the application, as proposed at the end of the event.
+The main idea of the project was developed during the NLW (Next Level Week) event and the result is the one available in [release v1](https://github.com/juliolmuller/feedget/releases/tag/v1.0.0). Afterwards, any incoming commits are intended to be incremental updates to improve the application, as proposed at the end of the event.
 
 Besides, base project layout & design is available at **[Figma](https://www.figma.com/file/AsyJFfGRy4RbYPfBVYvE5q/Feedback-Widget)**.
 

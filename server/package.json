@@ -1,6 +1,6 @@
 {
-  "name": "feedget-server",
-  "version": "1.0.2",
+  "name": "@feedget/server",
+  "version": "1.1.0",
   "private": true,
   "license": "MIT",
   "authors": [
@@ -9,33 +9,39 @@
   ],
   "scripts": {
     "prepare": "prisma generate",
+    "commit": "commit",
     "build": "tsc",
     "start": "node dist/",
     "dev": "bun --watch src/index.ts",
-    "start:db": "docker-compose up",
-    "start:dev": "concurrently 'bun run start:db' 'bun run dev'",
+    "start:dev": "bun run dev",
     "migrate": "prisma migrate dev",
     "lint": "tsc --noEmit && eslint --fix src/ eslint.config.mjs",
     "test": "bun test --coverage --coverage-reporter=lcov --coverage-dir=__coverage__",
     "test:watch": "bun run test --watch"
   },
   "dependencies": {
-    "@prisma/client": "^6.5.0",
+    "@prisma/client": "^6.6.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "nodemailer": "^6.10.0"
+    "nodemailer": "^6.10.1"
   },
   "devDependencies": {
-    "@types/bun": "^1.2.8",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.2",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.3",
+    "@types/bun": "^1.2.10",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
-    "@types/node": "^22.14.0",
+    "@types/node": "^22.15.2",
     "@types/nodemailer": "^6.4.17",
     "concurrently": "^9.1.2",
-    "eslint": "^9.23.0",
-    "eslint-config-any": "^1.0.3",
+    "eslint": "^9.25.1",
+    "eslint-config-any": "^1.1.0",
     "prettier": "^3.5.3",
-    "prisma": "^6.5.0",
-    "typescript": "^5.8.2"
+    "prisma": "^6.6.0",
+    "semantic-release": "^24.2.3",
+    "typescript": "^5.8.3"
   }
 }
