@@ -7,7 +7,7 @@ on:
 
 env:
   HUSKY: 0
-  BUN_VERSION: latest
+  NODE_VERSION: lts/Hydrogen
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
@@ -18,16 +18,9 @@ jobs:
       contents: write
       issues: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Bun.js
-        uses: oven-sh/setup-bun@v2
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
         with:
-          bun-version: ${{ env.BUN_VERSION }}
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
-
-      - name: Create release
-        run: bun run release
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm install
+      - run: npm run release
