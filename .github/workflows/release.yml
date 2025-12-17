@@ -7,7 +7,7 @@ on:
 
 env:
   HUSKY: 0
-  NODE_VERSION: lts/Hydrogen
+  NODE_VERSION: lts/*
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
