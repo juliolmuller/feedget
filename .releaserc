@@ -2,13 +2,28 @@
   "branches": [
     "main"
   ],
-  "extends": "semantic-release-monorepo",
   "plugins": [
     [
       "@semantic-release/commit-analyzer",
       {
         "preset": "conventionalcommits",
         "releaseRules": [
+          {
+            "type": "build",
+            "release": "patch"
+          },
+          {
+            "type": "chore",
+            "release": "patch"
+          },
+          {
+            "type": "ci",
+            "release": "patch"
+          },
+          {
+            "type": "docs",
+            "release": "patch"
+          },
           {
             "type": "feat",
             "release": "minor"
@@ -18,11 +33,23 @@
             "release": "patch"
           },
           {
-            "type": "chore",
+            "type": "perf",
             "release": "patch"
           },
           {
-            "type": "perf",
+            "type": "refactor",
+            "release": "patch"
+          },
+          {
+            "type": "revert",
+            "release": "patch"
+          },
+          {
+            "type": "style",
+            "release": "patch"
+          },
+          {
+            "type": "test",
             "release": "patch"
           }
         ],
