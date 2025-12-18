@@ -6,6 +6,7 @@
     "RocketSeat",
     "Julio L. Muller"
   ],
+  "type": "module",
   "scripts": {
     "prepare": "prisma generate",
     "commit": "commit",
