@@ -2,11 +2,8 @@ import { PrismaLibSql } from '@prisma/adapter-libsql';
 
 import { PrismaClient } from './generated/client';
 
-const databaseUrl = process.env.DATABASE_URL;
-
-if (!databaseUrl) {
-  throw new Error('Environment variable "DATABASE_URL" not set');
-}
+export const DEFAULT_DATABASE_URL = 'file:./src/database/sqlite/db.sqlite';
+export const databaseUrl = process.env.DATABASE_URL || DEFAULT_DATABASE_URL;
 
 const adapter = new PrismaLibSql({
   url: databaseUrl,
