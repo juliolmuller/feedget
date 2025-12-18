@@ -6,6 +6,7 @@
     "RocketSeat",
     "Julio L. Muller"
   ],
+  "type": "module",
   "scripts": {
     "prepare": "prisma generate",
     "commit": "commit",
@@ -19,7 +20,8 @@
     "test:watch": "bun run test --watch"
   },
   "dependencies": {
-    "@prisma/client": "^6.19.1",
+    "@prisma/adapter-libsql": "^7.2.0",
+    "@prisma/client": "^7.2.0",
     "cors": "^2.8.5",
     "express": "^5.2.1",
     "nodemailer": "^7.0.11"
@@ -31,10 +33,11 @@
     "@types/node": "^22.19.3",
     "@types/nodemailer": "^7.0.4",
     "concurrently": "^9.2.1",
+    "dotenv": "^17.2.3",
     "eslint": "^9.39.2",
     "eslint-config-any": "^2.2.1",
     "prettier": "^3.7.4",
-    "prisma": "^6.19.1",
+    "prisma": "^7.2.0",
     "semantic-release": "^25.0.2",
     "typescript": "^5.9.3"
   }
