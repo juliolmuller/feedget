@@ -8,12 +8,12 @@ export interface SubmitFeedbackServiceRequest {
 }
 
 class SubmitFeedbackService {
-  constructor(
+  public constructor(
     private readonly feedbackRepository: IFeedbackRepository,
     private readonly mailProvider: IMailProvider,
   ) {}
 
-  async execute(request: SubmitFeedbackServiceRequest): Promise<void> {
+  public async execute(request: SubmitFeedbackServiceRequest): Promise<void> {
     const { type, comment, screenshot } = request;
 
     if (!type) {
