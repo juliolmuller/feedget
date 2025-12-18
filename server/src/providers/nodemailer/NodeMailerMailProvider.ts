@@ -6,7 +6,7 @@ import type IMailProvider from '../IMailProvider';
 class NodeMailerMailProvider implements IMailProvider {
   private readonly transporter: Transporter;
 
-  constructor() {
+  public constructor() {
     this.transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: Number(process.env.EMAIL_PORT),
@@ -17,7 +17,7 @@ class NodeMailerMailProvider implements IMailProvider {
     });
   }
 
-  async send(data: SendMailData): Promise<void> {
+  public async send(data: SendMailData): Promise<void> {
     const { subject, body } = data;
 
     await this.transporter.sendMail({
