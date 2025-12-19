@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { defineConfig } from 'prisma/config';
 
-import { databaseUrl } from './src/database/prisma/client';
+import { DATABASE_URL } from './src/database/prisma/config';
 
 const prismaDir = './src/database/prisma';
 
@@ -11,6 +11,6 @@ export default defineConfig({
     path: `${prismaDir}/migrations`,
   },
   datasource: {
-    url: databaseUrl,
+    url: DATABASE_URL,
   },
 });
