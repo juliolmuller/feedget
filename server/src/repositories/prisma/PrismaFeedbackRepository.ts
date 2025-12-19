@@ -1,6 +1,5 @@
-import { type Feedback } from '@prisma/client';
-
 import { prismaClient } from '../../database';
+import { type Feedback } from '../../database/prisma';
 import { type ICreateRepositoryData } from '../IFeedbackRepository';
 import type IFeedbackRepository from '../IFeedbackRepository';
 
