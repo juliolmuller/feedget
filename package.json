@@ -1,6 +1,7 @@
 {
-  "name": "@feedget/monorepo",
-  "version": "0.0.0",
+  "name": "feedget",
+  "version": "auto",
+  "private": true,
   "homepage": "https://jlm-feedget.vercel.app/",
   "workspaces": [
     "server/",
