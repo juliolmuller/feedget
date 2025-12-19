@@ -2,11 +2,10 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "module": "ESNext",
-    "target": "es2022",
-    "outDir": "dist/",
-    "rootDir": "src/",
+    "target": "ESNext",
+    "noEmit": true,
     "skipLibCheck": true,
     "strict": true
   },

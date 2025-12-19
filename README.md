@@ -51,7 +51,7 @@ Application developed during eighth edition of [Next Level Week](https://nextlev
 - [HTML-to-Canvas converter](https://yorickshan.github.io/html2canvas-pro/)
 
 **Backend:**
-- [Bun](https://bun.sh/) as package manager, test runner and development runtime (using [Node.js](https://nodejs.org/en/) for production)
+- [Bun](https://bun.sh/) as package manager, test runner and runtime
 - [Express.js](https://expressjs.com/)
 - [Prisma](https://www.prisma.io/)
 - [Insomnia](https://insomnia.rest/)
@@ -66,7 +66,7 @@ Application developed during eighth edition of [Next Level Week](https://nextlev
 
 ## :hammer: Setting up the Environment
 
-To set up the projects in your environment, make sure to have **Node.js 22+** and **Bun 1.2+** installed in your machine and the `bun` shortcuts available through the command line.
+To set up the projects in your environment, make sure to have **Bun 1.3+** installed in your machine and the `bun` shortcuts available through the command line.
 
 Besides, you will need to create a `.env` file in both folders `/server` and `/web`. These file hold some configuration and secrets to make the application runnable. You can use the `.env.example` file as template to know which variables should be configured.
 
