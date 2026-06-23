@@ -18,22 +18,22 @@
     "@headlessui/react": "^2.2.10",
     "html2canvas-pro": "^1.6.7",
     "phosphor-react": "^1.4.1",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
   },
   "devDependencies": {
     "@tailwindcss/forms": "~0.5.11",
-    "@tailwindcss/vite": "^4.2.4",
-    "@types/react": "^19.2.14",
+    "@tailwindcss/vite": "^4.3.1",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "eslint": "^9.39.2",
-    "eslint-config-any": "^2.2.1",
-    "prettier": "^3.7.4",
-    "semantic-release": "^25.0.2",
+    "@vitejs/plugin-react": "^6.0.3",
+    "eslint": "^9.39.4",
+    "eslint-config-any": "^2.5.0",
+    "prettier": "^3.8.4",
+    "semantic-release": "^25.0.5",
     "tailwind-scrollbar": "^4.0.2",
-    "tailwindcss": "^4.2.4",
+    "tailwindcss": "^4.3.1",
     "typescript": "^5.9.3",
-    "vite": "^8.0.9"
+    "vite": "^8.1.0"
   }
 }
