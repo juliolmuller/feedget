@@ -1,6 +1,9 @@
 import anyConfig from 'eslint-config-any';
 
 export default [
+  {
+    ignores: ['src/database/prisma/generated/**'],
+  },
   ...anyConfig.node,
   {
     files: ['**/*.{test,spec}.*'],
